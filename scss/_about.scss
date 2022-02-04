@@ -1,0 +1,144 @@
+.about {
+  padding-top: 13.6875rem;
+
+  &__cardsContainer {
+    padding-top: 7.625rem;
+    padding-bottom: 17.0244rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18.4681rem, 1fr));
+    column-gap: 3.6375rem;
+    row-gap: 1.75rem;
+  }
+
+  &__card {
+    background-color: $white;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__cardImg {
+    position: relative;
+    left: 150px;
+    margin-top: 26px;
+  }
+
+  &__cardTitle {
+    color: $cardTitle;
+    font-weight: bold;
+    font-size: 2.9781rem;
+    margin-bottom: 1rem;
+  }
+
+  &__cardData {
+    color: $cardTitle;
+    font-size: 1rem;
+    max-width: 15.25rem;
+    text-align: center;
+    margin-bottom: 4.8087rem;
+  }
+}
+
+// ========== main card section ===========
+
+.mainCard {
+  position: relative;
+  background: linear-gradient(95.85deg, #00d8c3 3.11%, #00a795 98.25%);
+  border-radius: 40px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  padding-right: 7.125rem;
+  max-height: 35.5544rem;
+  @media screen and (max-width: 1500px) {
+    padding-right: 0rem;
+  }
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: 1fr;
+    max-height: 65rem;
+    justify-items: center;
+  }
+
+  &__img {
+    margin-top: 25px;
+    z-index: 10;
+
+    @media screen and (max-width: 992px) {
+      order: 2;
+    }
+  }
+
+  &__data {
+    flex: 1;
+    color: $white;
+    padding: 0 1rem;
+
+    @media screen and (max-width: 992px) {
+      order: 1;
+      text-align: center;
+    }
+  }
+
+  &__header {
+    font-weight: bold;
+    font-size: 2.25rem;
+    margin-top: 5rem;
+    line-height: 1.5;
+
+    @media screen and (max-width: 992px) {
+      br {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: 1.5rem;
+    max-width: 46.9375rem;
+    line-height: 1.5;
+    padding-bottom: 2rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__btn {
+    background-color: $white;
+    padding: 24.5px 89.5px;
+    color: $navBtn;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.25rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.9375rem;
+      padding: 15px 80px;
+    }
+  }
+}
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(
+    98.62deg,
+    rgba(255, 255, 255, 0) 5.65%,
+    #bdccd4 94.48%
+  );
+
+  &__small {
+    width: 4.39rem;
+    height: 4.39rem;
+    left: 150px;
+    top: -25px;
+    z-index: 1;
+  }
+}

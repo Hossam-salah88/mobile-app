@@ -1,0 +1,169 @@
+.header {
+  padding-top: 2.375rem;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(100.51deg, #00d8c3 6.16%, #00a795 103.42%);
+  position: relative;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 90%;
+    z-index: 100;
+
+    &__btn {
+      padding: 2px;
+      display: none;
+      cursor: pointer;
+      @media screen and (max-width: 992px) {
+        display: block;
+      }
+      > span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 29px;
+        background-color: $navBtn;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    height: 57.76px;
+    @media screen and (max-width: 450px) {
+      height: 48px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 992px) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 60vh;
+      background: linear-gradient(100.51deg, #00d8c3 6.16%, #00a795 103.42%);
+      flex-direction: column;
+      clip-path: polygon(0px 0%, 100% 0px, 100% 0px, 0px 0px);
+      align-items: center;
+    }
+
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  &__list {
+    display: flex;
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    margin: 0 2.3438rem;
+    @media screen and (max-width: 992px) {
+      margin: 15px 0px;
+    }
+  }
+
+  &__link {
+    font-weight: normal;
+    font-size: 1rem;
+    color: $fontColor;
+  }
+
+  &__btn {
+    background-color: $lightGreem;
+    padding: 16px 26px;
+    color: $white;
+
+    @media screen and (max-width: 992px) {
+      margin-right: 45px;
+    }
+  }
+
+  // =================== Header Scroll ================
+
+  &__scroll {
+    box-shadow: 0 -1px 4px rgba(10, 10, 10, 0.15);
+  }
+
+  // ===========================  hero section ============
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 992px) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding-top: 10.8125rem;
+    }
+
+    &__rightSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 30.875rem;
+    }
+
+    &__header {
+      font-size: 3.6012rem;
+      font-weight: bold;
+      color: $white;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      @media screen and (max-width: 400px) {
+        font-size: 2.7rem;
+      }
+    }
+
+    &__pragraph {
+      font-size: 1.1875rem;
+      margin-top: 2rem;
+      color: $white;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    &__btn {
+      padding: 24.5px 175px;
+      background-color: $white;
+      font-size: 1.25rem;
+      color: $lightGreem;
+      font-weight: bold;
+      display: inline-block;
+      text-align: center;
+      margin-top: 2rem;
+      @media screen and (max-width: 1500px) {
+        padding: 24.5px 160px;
+      }
+
+      @media screen and(max-width:508px) {
+        padding: 24.5px 100px;
+      }
+
+      @media screen and (max-width: 400px) {
+        font-size: 1.1rem;
+        padding: 24px 80px;
+      }
+    }
+
+    &__img {
+      position: relative;
+      top: 70px;
+    }
+  }
+}
+//================= Main section =====================

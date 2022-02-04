@@ -1,0 +1,20 @@
+.social {
+  padding-top: 7.8125rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__img {
+    height: 2.75rem;
+    margin-bottom: 4rem;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin-left: 3.125rem;
+  }
+}

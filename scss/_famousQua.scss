@@ -1,0 +1,90 @@
+.famousQus {
+  // padding-top: 28.9894rem;
+  padding-bottom: 11.1875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__header {
+    padding-bottom: 4.0169rem;
+    color: $famouQusHeader;
+    font-weight: bold;
+    font-size: 2.6906rem;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 6.25rem;
+
+    @media (max-width: 1090px) {
+      flex-direction: column;
+      justify-content: start;
+      gap: 0;
+    }
+  }
+
+  &__card {
+    border-bottom: 1px solid #62d4c2;
+    cursor: pointer;
+    padding-bottom: 1rem;
+  }
+
+  &__qus {
+    h3 {
+      font-size: 1.6875rem;
+      color: $famouQush;
+      position: relative;
+
+      &::after {
+        content: url("../images/arrow.svg");
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+
+    p {
+      max-width: 35rem;
+      text-align: justify;
+      color: $famouQusp;
+      font-weight: normal;
+      font-size: 1.5rem;
+      line-height: 35px;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+.famousQus__card .famousQus__qus.active h3 ::after {
+  content: url("../images/arrowD.svg");
+  left: 0;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.famousQus__card .famousQus__qus.active + .famousQus__answer {
+  max-height: 500px;
+  transition: all 0.3s ease-in-out;
+}

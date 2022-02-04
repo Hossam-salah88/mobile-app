@@ -1,0 +1,10 @@
+footer {
+  padding-bottom: 7.8125rem;
+  background: linear-gradient(180deg, #f6f7fb 0%, #ffffff 26.34%), #ffffff;
+  background-image: url(../images/footerbg.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+@import "./contact";
+@import "./social";
