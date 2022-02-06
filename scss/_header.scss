@@ -4,12 +4,12 @@
     linear-gradient(100.51deg, #00d8c3 6.16%, #00a795 103.42%);
   position: relative;
 
-  .nav {
+  .navBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: 34px;
     left: 0;
     right: 0;
     max-width: 90%;
@@ -98,7 +98,8 @@
   // =================== Header Scroll ================
 
   &__scroll {
-    box-shadow: 0 -1px 4px rgba(10, 10, 10, 0.15);
+    // box-shadow: 0 -1px 4px rgba(10, 10, 10, 0.15);
+    background-color: #00d8c3;
   }
 
   // ===========================  hero section ============

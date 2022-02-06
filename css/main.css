@@ -113,7 +113,7 @@ img {
   position: relative;
 }
 
-.header .nav {
+.header .navBar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,26 +124,26 @@ img {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
-  top: 0;
+  top: 34px;
   left: 0;
   right: 0;
   max-width: 90%;
   z-index: 100;
 }
 
-.header .nav__btn {
+.header .navBar__btn {
   padding: 2px;
   display: none;
   cursor: pointer;
 }
 
 @media screen and (max-width: 992px) {
-  .header .nav__btn {
+  .header .navBar__btn {
     display: block;
   }
 }
 
-.header .nav__btn > span {
+.header .navBar__btn > span {
   display: block;
   width: 20px;
   height: 2px;
@@ -151,7 +151,7 @@ img {
   background-color: #5dd5c4;
 }
 
-.header .nav__btn > span:not(:last-child) {
+.header .navBar__btn > span:not(:last-child) {
   margin-bottom: 8px;
 }
 
@@ -249,8 +249,7 @@ img {
 }
 
 .header__scroll {
-  -webkit-box-shadow: 0 -1px 4px rgba(10, 10, 10, 0.15);
-          box-shadow: 0 -1px 4px rgba(10, 10, 10, 0.15);
+  background-color: #00d8c3;
 }
 
 .header .hero {
