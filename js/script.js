@@ -10,7 +10,7 @@ navBtn.addEventListener("click", () => {
 
 // shadow on scroll
 function scrollHeader() {
-  const nav = document.querySelector(".nav");
+  const nav = document.querySelector(".navBar");
   const scrollY = window.pageYOffset;
   if (this.scrollY >= 80) {
     nav.classList.add("header__scroll");
