@@ -1,7 +1,7 @@
 const headerMenu = document.querySelector(".header__menu");
 const headerList = document.querySelector(".header__list");
 
-const navBtn = document.querySelector(".nav__btn");
+const navBtn = document.querySelector(".navBar__btn");
 
 // show mobile menu
 navBtn.addEventListener("click", () => {
