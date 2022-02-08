@@ -17,6 +17,7 @@ body {
   background-color: #f6f7fb;
   outline: none;
   direction: rtl;
+  overflow-x: hidden;
 }
 
 ul {
