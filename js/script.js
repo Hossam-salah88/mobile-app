@@ -1,21 +1,26 @@
-const headerMenu = document.querySelector(".header__menu");
-const headerList = document.querySelector(".header__list");
-
-const navBtn = document.querySelector(".navBar__btn");
+const headerMenu = document.querySelector(".nav__menu");
+const headerList = document.querySelector(".nav__list");
+const navItems = document.querySelectorAll(".nav__item");
+const nav = document.querySelector(".nav");
+const navBtn = document.querySelector(".toggel__btn");
 
 // show mobile menu
 navBtn.addEventListener("click", () => {
   headerMenu.classList.toggle("active");
+  navItems.forEach((navItem) => {
+    navItem.classList.toggle("fade");
+  });
+  nav.classList.toggle("open");
 });
 
 // shadow on scroll
 function scrollHeader() {
-  const nav = document.querySelector(".navBar");
+  const nav = document.querySelector(".nav");
   const scrollY = window.pageYOffset;
   if (this.scrollY >= 80) {
-    nav.classList.add("header__scroll");
+    nav.classList.add("nav__scroll");
   } else {
-    nav.classList.remove("header__scroll");
+    nav.classList.remove("nav__scroll");
   }
 }
 window.addEventListener("scroll", scrollHeader);
@@ -124,11 +129,11 @@ const featuresData = [
     icon: "fas fa-sign-in-alt",
     miniTitle: "تسجيل الدخول السريع",
     miniDetails:
-      "هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في هذا النص. بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم نفسه عدة مرات بما تتطلبه الحاجة،",
+      "ضاعف معدل زياده عملاء كل متجرك وفرصه اكمالهم عملياتهم الشرائيه من خلال ارسال تنبيهات ترويجيه لا محدوده",
     image: "./images/feature-9.png",
     title: "تسجيل الدخول السريع",
     details:
-      "ضاعف معدل زياده عملاء كل متجرك وفرصه اكمالهم عملياتهم الشرائيه من خلال ارسال تنبيهات ترويجيه لا محدوده",
+      "هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في هذا النص. بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم نفسه عدة مرات بما تتطلبه الحاجة،",
     featureImage: "./images/feature-img-9.png",
   },
   {
@@ -149,14 +154,14 @@ document.getElementById("featuresContainer").innerHTML = featuresData
   .map((feature) => {
     return `
   <div class="featureItem">
-      <div class="featureIcon">
+      <div class="feature__Icon">
           <i class="${feature.icon}"></i>
       </div>
-      <div class="featureInfo">
-          <h3>${feature.miniTitle}</h3>
-          <p>${feature.miniDetails}</p>
+      <div class="feature__Info">
+          <h3 class="featureItem__title">${feature.miniTitle}</h3>
+          <p class="featureItem__subtitle">${feature.miniDetails}</p>
       </div>
-      <button data-popup-targt='#${feature.id}'>
+      <button class="featureItem__btn" data-popup-targt='#${feature.id}'>
               استكشف المزيد 
               <svg xmlns="http://www.w3.org/2000/svg" width="38" height="9" viewBox="0 0 38 9" fill="none">
                   <path d="M37.91 4.87988H2" stroke-miterlimit="10"/>
@@ -172,18 +177,18 @@ document.getElementById("popupContainer").innerHTML = featuresData
   .map((feature) => {
     return `
       <div class="popup" id="${feature.id}">
-          <div class="popupContent">
-              <div class="popupInfo">
+          <div class="popup__content">
+              <div class="popup__info">
                   <img src="${feature.image}" alt="">
-                  <h3>${feature.title}</h3>
-                  <p>${feature.details}</p>
+                  <h3 class="popup__title">${feature.title}</h3>
+                  <p class="popup__subtitle">${feature.details}</p>
               </div>
-              <div class="popupImage">
+              <div class="popup__img">
                   <img src="${feature.featureImage}" alt="">
               </div>
           </div>
           <button data-close-btn class="closeBtn">
-              <img src="./assets/images/close-btn.png" alt="">
+              <img src="./images/close-btn.png" alt="">
           </button>
       </div>
   `;
@@ -194,7 +199,7 @@ const loadeMoer = document.querySelector("#load");
 let current = 4;
 loadeMoer.addEventListener("click", () => {
   let features = [
-    ...document.querySelectorAll(".featuresContainer .featureItem"),
+    ...document.querySelectorAll(".features__Container .featureItem"),
   ];
   for (let i = current; i < current + 2; i++) {
     features[i].style.display = "block";
