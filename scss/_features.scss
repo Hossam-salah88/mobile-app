@@ -79,6 +79,10 @@
     &:hover {
       margin-right: 10px;
     }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &:hover {
